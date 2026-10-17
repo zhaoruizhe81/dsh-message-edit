@@ -124,8 +124,11 @@ sh dev/run-integration.sh /path/to/deepseek-harness
 `dev/probe.mjs` 会读 `~/.dsh/.credentials.yaml` 里那枚签名密钥，现签一枚一小时后过期的
 cookie（和浏览器走同一条取数路径）。密钥只在内存里过一遍，不打印、不落盘。
 
-`test/render.test.mjs` 需要 `react` / `react-dom` / `jsdom`：从本机 dsh 源码 checkout 借
-（`DSH_SOURCE_DIR=/path/to/deepseek-harness`），借不到就整段跳过。
+两套"借宿主机"的测试都靠同一个约定找依赖：`DSH_SOURCE_DIR=/path/to/deepseek-harness`，
+或者插件目录旁边正好有一个 `deepseek-harness`；找不到就整段跳过。
+
+- `test/render.test.mjs` 要 `react` / `react-dom` / `jsdom`（真渲染三个 slot 条目）；
+- `test/host.test.mjs` 要 `@deepseek-ai/cordis`（真 ctx，不是手搓的假对象）。
 
 ## 已知边界
 

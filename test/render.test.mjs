@@ -50,7 +50,6 @@ const roots = [
   pluginRoot,
   process.env.DSH_SOURCE_DIR ?? '',
   join(pluginRoot, '..', 'deepseek-harness'),
-  '/Users/zhaoruizhe/Desktop/project/P/deepseek-harness',
 ]
 
 const reactEntry = resolveOptional('react', roots)
