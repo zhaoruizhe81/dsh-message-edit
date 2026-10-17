@@ -1,0 +1,63 @@
+{
+  "name": "dsh-message-edit",
+  "version": "0.1.0",
+  "description": "dsh Web GUI 插件：模型这条回答不好，直接改它。改写后的版本成为后续对话的上下文，原始回答留在会话日志里。角色扮演刚需。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "dev",
+    "test",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "icon.svg"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-client-plugin",
+    "deepseek-harness",
+    "message-edit",
+    "roleplay"
+  ],
+  "license": "MIT",
+  "icon": "./icon.svg",
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaoruizhe81/dsh-message-edit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhaoruizhe81/dsh-message-edit/issues"
+  },
+  "homepage": "https://github.com/zhaoruizhe81/dsh-message-edit#readme"
+}

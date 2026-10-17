@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Message Rewrite",
+    "description": "Rewrite a bad assistant reply in place: the rewritten text becomes the context of every later turn, while the original stays in the session log."
+  }
+}

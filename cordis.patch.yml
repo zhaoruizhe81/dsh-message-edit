@@ -1,0 +1,15 @@
+# dsh-message-edit bundle patch：把插件行插进 profile roster。
+#
+# 想调参不要在 profile 的 cordis.patch.yml 里改这里，而是在 profile 层用同一个
+# id 覆盖 config（后面的层覆盖前面的层）：
+#
+#   - id: message-edit
+#     name: dsh-message-edit
+#     config:
+#       rewriteInContext: false   # 只记录改写、不动请求（纯标注模式）
+#       transcriptCard: false     # 不在对话流里插改写卡
+#       maxChars: 8000            # 单条改写的长度上限
+#
+- insert:
+    - id: message-edit
+      name: dsh-message-edit
